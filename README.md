@@ -2,8 +2,7 @@
 
 This provides a basic local-first in browser example project that uses `Aphrodite`.
 
-- The schema is located in `src/domain.aphro`
-- A simple application is in `src/App.tsx`
+[View a hosted/deployed preview of the app here](https://aphrodite-examples.pages.dev/todo-mvc/)
 
 # Getting Started
 
@@ -36,9 +35,7 @@ npm run aphro
 
 This "demo app" is an implementation of TodoMVC --
 
-# Aphrodite - TodoMVC
-
-**[Launch the example](https://aphrodite-examples.pages.dev/todo-mvc/)!**
+# Aphrodite - TodoMVC Overview
 
 *An implementation of [TodoMVC](https://todomvc.com/) using `Aphrodite` to manage the data model locally in the browser.*
 
