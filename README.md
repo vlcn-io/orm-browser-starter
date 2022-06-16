@@ -33,11 +33,7 @@ If you change the schema and want to re-generate the generated code, run
 npm run aphro
 ```
 
-This "demo app" is an implementation of TodoMVC --
-
-# Aphrodite - TodoMVC Overview
-
-*An implementation of [TodoMVC](https://todomvc.com/) using `Aphrodite` to manage the data model locally in the browser.*
+This "demo app" is an implementation of [TodoMVC](https://todomvc.com/) using Aphrodite & React --
 
 # Code Overview
 
