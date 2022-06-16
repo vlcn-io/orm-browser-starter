@@ -1,3 +1,41 @@
+# Aphrodite Browser Starter
+
+This provides a basic local-first in browser example project that uses `Aphrodite`.
+
+- The schema is located in `src/domain.aphro`
+- A simple application is in `src/App.tsx`
+
+# Getting Started
+
+Either open in [GitPod](https://gitpod.io/#git@github.com:tantaman/aphrodite-browser-starter.git) or follow the steps below --
+
+First, clone this repository
+
+```bash
+git clone git@github.com:tantaman/aphrodite-browser-starter.git
+```
+
+Next, cd to `aphrodite-browser-starter` and install dependencies.
+
+```bash
+cd aphrodite-browser-starter
+npm install
+```
+
+The commands to build and run are the "demo app" are:
+
+```bash
+npm run serve
+```
+
+If you change the schema and want to re-generate the generated code, run
+
+```bash
+npm run aphro
+```
+
+This "demo app" is an implementation of TodoMVC --
+
 # Aphrodite - TodoMVC
 
 **[Launch the example](https://aphrodite-examples.pages.dev/todo-mvc/)!**
