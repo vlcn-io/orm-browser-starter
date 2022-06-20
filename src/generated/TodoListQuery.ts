@@ -1,4 +1,4 @@
-// SIGNED-SOURCE: <b5a6c3bef62df6e01a2aaf11a0978e58>
+// SIGNED-SOURCE: <f914a41196c006461cfe0cfda6b5c5fc>
 /**
  * AUTO-GENERATED FILE
  * Do not modify. Update your schema and re-generate for changes.
@@ -11,8 +11,12 @@ import { QueryFactory } from "@aphro/runtime-ts";
 import { modelLoad } from "@aphro/runtime-ts";
 import { filter } from "@aphro/runtime-ts";
 import { Predicate } from "@aphro/runtime-ts";
+import { take } from "@aphro/runtime-ts";
+import { orderBy } from "@aphro/runtime-ts";
 import { P } from "@aphro/runtime-ts";
 import { ModelFieldGetter } from "@aphro/runtime-ts";
+import { Expression } from "@aphro/runtime-ts";
+import { EmptyQuery } from "@aphro/runtime-ts";
 import { SID_of } from "@aphro/runtime-ts";
 import TodoList from "./TodoList.js";
 import { Data } from "./TodoList.js";
@@ -30,30 +34,32 @@ export default class TodoListQuery extends DerivedQuery<TodoList> {
     );
   }
 
+  static empty(ctx: Context) {
+    return new TodoListQuery(ctx, new EmptyQuery(ctx));
+  }
+
+  protected derive(expression: Expression): TodoListQuery {
+    return new TodoListQuery(this.ctx, this, expression);
+  }
+
   static fromId(ctx: Context, id: SID_of<TodoList>) {
     return this.create(ctx).whereId(P.equals(id));
   }
 
   whereId(p: Predicate<Data["id"]>) {
-    return new TodoListQuery(
-      this.ctx,
-      this,
+    return this.derive(
       filter(new ModelFieldGetter<"id", Data, TodoList>("id"), p)
     );
   }
 
   whereFilter(p: Predicate<Data["filter"]>) {
-    return new TodoListQuery(
-      this.ctx,
-      this,
+    return this.derive(
       filter(new ModelFieldGetter<"filter", Data, TodoList>("filter"), p)
     );
   }
 
   whereEditing(p: Predicate<Data["editing"]>) {
-    return new TodoListQuery(
-      this.ctx,
-      this,
+    return this.derive(
       filter(new ModelFieldGetter<"editing", Data, TodoList>("editing"), p)
     );
   }
@@ -62,6 +68,34 @@ export default class TodoListQuery extends DerivedQuery<TodoList> {
       this.ctx,
       QueryFactory.createHopQueryFor(this.ctx, this, spec.outboundEdges.todos),
       modelLoad(this.ctx, TodoSpec.createFrom)
+    );
+  }
+
+  take(n: number) {
+    return new TodoListQuery(this.ctx, this, take(n));
+  }
+
+  orderById(direction: "asc" | "desc" = "asc") {
+    return this.derive(
+      orderBy(new ModelFieldGetter<"id", Data, TodoList>("id"), direction)
+    );
+  }
+
+  orderByFilter(direction: "asc" | "desc" = "asc") {
+    return this.derive(
+      orderBy(
+        new ModelFieldGetter<"filter", Data, TodoList>("filter"),
+        direction
+      )
+    );
+  }
+
+  orderByEditing(direction: "asc" | "desc" = "asc") {
+    return this.derive(
+      orderBy(
+        new ModelFieldGetter<"editing", Data, TodoList>("editing"),
+        direction
+      )
     );
   }
 }

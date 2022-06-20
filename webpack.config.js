@@ -1,9 +1,17 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import ResolveTypeScriptPlugin from "resolve-typescript-plugin";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export default {
   devServer: {
-    publicPath: "/",
+    static: {
+      directory: path.resolve(__dirname),
+      publicPath: "/",
+    },
     hot: true,
     headers: {
       "Cross-Origin-Opener-Policy": "same-origin",
