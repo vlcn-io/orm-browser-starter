@@ -2,7 +2,7 @@
 
 This provides a local-first in browser example project that uses `Aphrodite`.
 
-[View a hosted/deployed preview of the app here](https://aphrodite-examples.pages.dev/todo-mvc/)
+**[Launch the app!](https://aphrodite-examples.pages.dev/todo-mvc/)**
 
 # Getting The Code
 
