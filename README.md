@@ -2,38 +2,7 @@
 
 This provides a local-first in browser example project that uses `Aphrodite`.
 
-[View a hosted/deployed preview of the app here](https://aphrodite-examples.pages.dev/todo-mvc/)
-
-# Getting The Code
-
-Either open in [GitPod](https://gitpod.io/#git@github.com:tantaman/aphrodite-browser-starter.git) or follow the steps below --
-
-First, clone this repository
-
-```bash
-git clone git@github.com:tantaman/aphrodite-browser-starter.git
-```
-
-Next, cd to `aphrodite-browser-starter` and install dependencies.
-
-```bash
-cd aphrodite-browser-starter
-npm install
-```
-
-The command to build and run the "demo app" are:
-
-```bash
-npm run serve
-```
-
-If you change the schema and want to re-generate the generated code, run
-
-```bash
-npm run aphro
-```
-
-This "demo app" is an implementation of [TodoMVC](https://todomvc.com/) using `Aphrodite` & `React` --
+**[Launch the app!](https://aphrodite-examples.pages.dev/todo-mvc/)**
 
 # Code Overview
 
@@ -140,3 +109,34 @@ const toggleAll = () => {
   }
 };
 ```
+
+# Getting The Code
+
+Either open in [GitPod](https://gitpod.io/#git@github.com:tantaman/aphrodite-browser-starter.git) or follow the steps below --
+
+First, clone this repository
+
+```bash
+git clone git@github.com:tantaman/aphrodite-browser-starter.git
+```
+
+Next, cd to `aphrodite-browser-starter` and install dependencies.
+
+```bash
+cd aphrodite-browser-starter
+npm install
+```
+
+The command to build and run the "demo app" are:
+
+```bash
+npm run serve
+```
+
+If you change the schema and want to re-generate the generated code, run
+
+```bash
+npm run aphro
+```
+
+This "demo app" is an implementation of [TodoMVC](https://todomvc.com/) using `Aphrodite` & `React` --
