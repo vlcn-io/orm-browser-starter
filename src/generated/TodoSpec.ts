@@ -1,4 +1,4 @@
-// SIGNED-SOURCE: <4122cf2d745489a58d5825a0a01a8a09>
+// SIGNED-SOURCE: <dd45d012a99455049e6e1984f3e8faf1>
 /**
  * AUTO-GENERATED FILE
  * Do not modify. Update your schema and re-generate for changes.
@@ -14,7 +14,7 @@ import { Data } from "./Todo.js";
 const spec: NodeSpecWithCreate<Todo, Data> = {
   type: "node",
   createFrom(ctx: Context, data: Data) {
-    const existing = ctx.cache.get(data["id"]);
+    const existing = ctx.cache.get(data["id"], Todo.name);
     if (existing) {
       return existing;
     }
