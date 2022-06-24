@@ -12,6 +12,7 @@ export default {
       directory: path.resolve(__dirname),
       publicPath: "/",
     },
+    allowedHosts: "all",
     hot: true,
     headers: {
       "Cross-Origin-Opener-Policy": "same-origin",
