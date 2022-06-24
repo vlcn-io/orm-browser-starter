@@ -1,6 +1,7 @@
 # Aphrodite Browser Starter
 
-This provides a local-first in browser example project that uses `Aphrodite`.
+This provides a local-first in browser example project that uses `Aphrodite`.<br/>
+See also -- `Aphrodite` in an [interactive reactive notebook](https://observablehq.com/@tantaman/aphrodite-chinook) (observablehq).
 
 **[Launch the app!](https://aphrodite-examples.pages.dev/todo-mvc/)**
 
