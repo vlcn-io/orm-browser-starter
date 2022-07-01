@@ -1,4 +1,4 @@
-// SIGNED-SOURCE: <2c37b6ff63cc4225bdcff5afe6188ecb>
+// SIGNED-SOURCE: <35ef435a61c1c46b0b209a7f35d2c00a>
 /**
  * AUTO-GENERATED FILE
  * Do not modify. Update your schema and re-generate for changes.
@@ -18,9 +18,7 @@ export type Data = {
   id: SID_of<Todo>;
   listId: SID_of<TodoList>;
   text: string;
-  created: number;
-  modified: number;
-  completed: number | null;
+  completed: boolean;
 };
 
 export default class Todo extends Node<Data> {
@@ -38,15 +36,7 @@ export default class Todo extends Node<Data> {
     return this.data.text;
   }
 
-  get created(): number {
-    return this.data.created;
-  }
-
-  get modified(): number {
-    return this.data.modified;
-  }
-
-  get completed(): number | null {
+  get completed(): boolean {
     return this.data.completed;
   }
 

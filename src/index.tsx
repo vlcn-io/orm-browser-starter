@@ -23,8 +23,8 @@ async function bootstrap(ctx: Context): Promise<TodoList> {
 
   // Since we don't yet support migrations. Drop during development.
   // await Promise.allSettled([
-  //   db.exec(sql`DROP TABLE IF EXISTS todo`),
-  //   db.exec(sql`DROP TABLE IF EXISTS todolist`),
+  //   db.query(sql`DROP TABLE IF EXISTS todo`),
+  //   db.query(sql`DROP TABLE IF EXISTS todolist`),
   // ]);
 
   await Promise.all([

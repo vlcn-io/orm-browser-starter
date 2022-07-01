@@ -1,5 +1,4 @@
 import { CreateArgs } from "./TodoMutations.js";
-import { ToggleCompleteArgs } from "./TodoMutations.js";
 import { SetCompleteArgs } from "./TodoMutations.js";
 import { ChangeTextArgs } from "./TodoMutations.js";
 import { DeleteArgs } from "./TodoMutations.js";
@@ -16,17 +15,7 @@ export function createImpl(
     id: sid("AAAA"),
     text,
     listId,
-    created: Date.now(),
-    modified: Date.now(),
-  });
-}
-
-export function toggleCompleteImpl(
-  mutator: Omit<IMutationBuilder<Todo, Data>, "toChangeset">,
-  { completed }: ToggleCompleteArgs
-): void | Changeset<any>[] {
-  mutator.set({
-    completed: completed == null ? Date.now() : null,
+    completed: false,
   });
 }
 

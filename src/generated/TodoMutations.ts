@@ -1,4 +1,4 @@
-// SIGNED-SOURCE: <c0c83e5cfee86e70e32e8f80c1468f96>
+// SIGNED-SOURCE: <aef08a2a2b93b79c8b3716171b6dc8a1>
 /**
  * AUTO-GENERATED FILE
  * Do not modify. Update your schema and re-generate for changes.
@@ -21,9 +21,7 @@ import TodoList from "./TodoList.js";
 
 export type CreateArgs = { text: string; listId: SID_of<TodoList> };
 
-export type ToggleCompleteArgs = { completed: number | null };
-
-export type SetCompleteArgs = { completed: number | null };
+export type SetCompleteArgs = { completed: boolean };
 
 export type ChangeTextArgs = { text: string };
 
@@ -35,12 +33,6 @@ class Mutations extends MutationsBase<Todo, Data> {
 
   create(args: CreateArgs): this {
     const extraChangesets = impls.createImpl(this.mutator, args);
-    this.mutator.addExtraChangesets(extraChangesets || undefined);
-    return this;
-  }
-
-  toggleComplete(args: ToggleCompleteArgs): this {
-    const extraChangesets = impls.toggleCompleteImpl(this.mutator, args);
     this.mutator.addExtraChangesets(extraChangesets || undefined);
     return this;
   }
@@ -68,13 +60,6 @@ export default class TodoMutations {
   static create(ctx: Context, args: CreateArgs): Mutations {
     return new Mutations(ctx, new CreateMutationBuilder(spec)).create(args);
   }
-  static toggleComplete(model: Todo, args: ToggleCompleteArgs): Mutations {
-    return new Mutations(
-      model.ctx,
-      new UpdateMutationBuilder(spec, model)
-    ).toggleComplete(args);
-  }
-
   static setComplete(model: Todo, args: SetCompleteArgs): Mutations {
     return new Mutations(
       model.ctx,

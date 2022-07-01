@@ -55,7 +55,7 @@ const TodoView = memo(
     useBind(todo, ["text", "completed"]);
     const deleteTodo = () => TodoMutations.delete(todo, {}).save();
     const toggleTodo = () =>
-      TodoMutations.toggleComplete(todo, { completed: todo.completed }).save();
+      TodoMutations.setComplete(todo, { completed: !todo.completed }).save();
 
     if (editing) {
       body = (
@@ -75,7 +75,7 @@ const TodoView = memo(
           <input
             type="checkbox"
             className="toggle"
-            checked={todo.completed != null}
+            checked={todo.completed}
             onChange={toggleTodo}
           />
           <label onDoubleClick={() => startEditing(todo)}>{todo.text}</label>
@@ -86,8 +86,7 @@ const TodoView = memo(
     return (
       <li
         className={
-          (todo.completed != null ? "completed " : "") +
-          (editing ? "editing" : "")
+          (todo.completed ? "completed " : "") + (editing ? "editing" : "")
         }
       >
         {body}
@@ -183,7 +182,7 @@ export default function App({ list }: { list: TodoList }) {
       commit(
         list.ctx,
         completeTodos.map((t) =>
-          TodoMutations.setComplete(t, { completed: null }).toChangeset()
+          TodoMutations.setComplete(t, { completed: false }).toChangeset()
         )
       );
     } else {
@@ -191,7 +190,7 @@ export default function App({ list }: { list: TodoList }) {
       commit(
         list.ctx,
         activeTodos.map((t) =>
-          TodoMutations.setComplete(t, { completed: Date.now() }).toChangeset()
+          TodoMutations.setComplete(t, { completed: true }).toChangeset()
         )
       );
     }
@@ -202,12 +201,12 @@ export default function App({ list }: { list: TodoList }) {
   const [activeTodos, completeTodos, allTodos] = unwraps(
     useQuery(
       UpdateType.ANY,
-      () => list.queryTodos().whereCompleted(P.equals(null)),
+      () => list.queryTodos().whereCompleted(P.equals(false)),
       []
     ),
     useQuery(
       UpdateType.ANY,
-      () => list.queryTodos().whereCompleted(P.notEqual(null)),
+      () => list.queryTodos().whereCompleted(P.equals(true)),
       []
     ),
     useQuery(UpdateType.CREATE_OR_DELETE, () => list.queryTodos(), [])

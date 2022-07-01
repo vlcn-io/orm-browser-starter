@@ -1,4 +1,4 @@
-// SIGNED-SOURCE: <807c9ebdfd449182618ca2121ee2d9e5>
+// SIGNED-SOURCE: <4db5989d2ce39f6f3fb634ca6d109ed4>
 /**
  * AUTO-GENERATED FILE
  * Do not modify. Update your schema and re-generate for changes.
@@ -60,18 +60,6 @@ export default class TodoQuery extends DerivedQuery<Todo> {
     );
   }
 
-  whereCreated(p: Predicate<Data["created"]>) {
-    return this.derive(
-      filter(new ModelFieldGetter<"created", Data, Todo>("created"), p)
-    );
-  }
-
-  whereModified(p: Predicate<Data["modified"]>) {
-    return this.derive(
-      filter(new ModelFieldGetter<"modified", Data, Todo>("modified"), p)
-    );
-  }
-
   whereCompleted(p: Predicate<Data["completed"]>) {
     return this.derive(
       filter(new ModelFieldGetter<"completed", Data, Todo>("completed"), p)
@@ -97,21 +85,6 @@ export default class TodoQuery extends DerivedQuery<Todo> {
   orderByText(direction: "asc" | "desc" = "asc") {
     return this.derive(
       orderBy(new ModelFieldGetter<"text", Data, Todo>("text"), direction)
-    );
-  }
-
-  orderByCreated(direction: "asc" | "desc" = "asc") {
-    return this.derive(
-      orderBy(new ModelFieldGetter<"created", Data, Todo>("created"), direction)
-    );
-  }
-
-  orderByModified(direction: "asc" | "desc" = "asc") {
-    return this.derive(
-      orderBy(
-        new ModelFieldGetter<"modified", Data, Todo>("modified"),
-        direction
-      )
     );
   }
 

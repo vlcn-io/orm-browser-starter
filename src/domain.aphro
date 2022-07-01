@@ -4,22 +4,16 @@ db: todomvc
 Todo as Node {
   id: ID<Todo>
   listId: ID<TodoList>
-  text: NaturalLanguage
-  created: Timestamp
-  modified: Timestamp
-  completed: Timestamp | null
+  text: string
+  completed: bool
 } & Mutations {
   create as Create {
     text
     listId
   }
 
-  toggleComplete as Update {
-    completed: Timestamp | null
-  }
-
   setComplete as Update {
-    completed: Timestamp | null
+    completed: bool
   }
 
   changeText as Update {
