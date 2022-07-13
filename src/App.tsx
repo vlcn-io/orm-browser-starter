@@ -1,11 +1,9 @@
 import Todo from "./generated/Todo.js";
 import * as React from "react";
 import { useState, useCallback, memo } from "react";
-import { unwraps, useBind, useQuery } from "@aphro/react";
-import { commit, P, UpdateType } from "@aphro/runtime-ts";
+import { useBind, useQuery } from "@aphro/react";
+import { commit, P, UpdateType, sid } from "@aphro/runtime-ts";
 import TodoList, { Data } from "./generated/TodoList.js";
-import TodoListMutations from "./generated/TodoListMutations.js";
-import TodoMutations from "./generated/TodoMutations.js";
 
 type Filter = Data["filter"];
 
@@ -24,9 +22,11 @@ function Header({ todoList }: { todoList: TodoList }) {
         onKeyUp={(e) => {
           const target = e.target as HTMLInputElement;
           if (e.key === "Enter" && target.value.trim() !== "") {
-            TodoMutations.create(todoList.ctx, {
+            Todo.create(todoList.ctx, {
+              id: sid("aaaa"),
               text: target.value,
               listId: todoList.id,
+              completed: false,
             }).save();
             setNewText("");
           }
@@ -53,9 +53,8 @@ const TodoView = memo(
 
     const [text, setText] = useState(todo.text);
     useBind(todo, ["text", "completed"]);
-    const deleteTodo = () => TodoMutations.delete(todo, {}).save();
-    const toggleTodo = () =>
-      TodoMutations.setComplete(todo, { completed: !todo.completed }).save();
+    const deleteTodo = () => todo.delete().save();
+    const toggleTodo = () => todo.update({ completed: !todo.completed }).save();
 
     if (editing) {
       body = (
@@ -115,8 +114,7 @@ function Footer({
     );
   }
 
-  const updateFilter = (filter: Filter) =>
-    TodoListMutations.filter(todoList, { filter }).save();
+  const updateFilter = (filter: Filter) => todoList.update({ filter }).save();
 
   return (
     <footer className="footer">
@@ -160,18 +158,18 @@ export default function App({ list }: { list: TodoList }) {
   const clearCompleted = () =>
     commit(
       list.ctx,
-      completeTodos.map((t) => TodoMutations.delete(t, {}).toChangeset())
+      completeTodos.map((t) => t.delete())
     );
   const startEditing = useCallback(
-    (todo: Todo) => TodoListMutations.edit(list, { editing: todo.id }).save(),
+    (todo: Todo) => list.update({ editing: todo.id }).save(),
     [list]
   );
   const saveTodo = useCallback(
     (todo: Todo, text: string) => {
       commit(
         list.ctx,
-        TodoMutations.changeText(todo, { text: text }).toChangeset(),
-        TodoListMutations.edit(list, { editing: null }).toChangeset()
+        todo.update({ text: text }),
+        list.update({ editing: null })
       );
     },
     [list]
@@ -181,36 +179,30 @@ export default function App({ list }: { list: TodoList }) {
       // uncomplete all
       commit(
         list.ctx,
-        completeTodos.map((t) =>
-          TodoMutations.setComplete(t, { completed: false }).toChangeset()
-        )
+        completeTodos.map((t) => t.update({ completed: false }))
       );
     } else {
       // complete all
       commit(
         list.ctx,
-        activeTodos.map((t) =>
-          TodoMutations.setComplete(t, { completed: true }).toChangeset()
-        )
+        activeTodos.map((t) => t.update({ completed: true }))
       );
     }
   };
   let toggleAllCheck;
 
   useBind(list, ["filter", "editing"]);
-  const [activeTodos, completeTodos, allTodos] = unwraps(
-    useQuery(
-      UpdateType.ANY,
-      () => list.queryTodos().whereCompleted(P.equals(false)),
-      []
-    ),
-    useQuery(
-      UpdateType.ANY,
-      () => list.queryTodos().whereCompleted(P.equals(true)),
-      []
-    ),
-    useQuery(UpdateType.CREATE_OR_DELETE, () => list.queryTodos(), [])
-  );
+  const activeTodos = useQuery(() =>
+    list.queryTodos().whereCompleted(P.equals(false))
+  ).data;
+  const completeTodos = useQuery(() =>
+    list.queryTodos().whereCompleted(P.equals(true))
+  ).data;
+  const allTodos = useQuery(
+    () => list.queryTodos(),
+    [],
+    UpdateType.CREATE_OR_DELETE
+  ).data;
 
   const remaining = activeTodos.length;
   let todos =

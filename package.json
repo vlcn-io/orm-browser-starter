@@ -11,14 +11,14 @@
     "ts-build": "tsc"
   },
   "dependencies": {
-    "@aphro/absurd-sql-connector": "^0.1.0",
-    "@aphro/react": "^0.1.7",
-    "@aphro/runtime-ts": "^0.1.5",
+    "@aphro/absurd-sql-connector": "^0.1.9",
+    "@aphro/react": "^0.2.1",
+    "@aphro/runtime-ts": "^0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@aphro/codegen-cli": "^0.1.5",
+    "@aphro/codegen-cli": "^0.2.0",
     "@types/react": "^18.0.14",
     "html-webpack-plugin": "^5.5.0",
     "raw-loader": "^4.0.2",

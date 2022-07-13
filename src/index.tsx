@@ -5,10 +5,9 @@ import { createResolver } from "@aphro/absurd-sql-connector";
 import { anonymous, sql } from "@aphro/runtime-ts";
 import TodoTable from "./generated/Todo.sqlite.sql";
 import TodoListTable from "./generated/TodoList.sqlite.sql";
-import { context, Context } from "@aphro/runtime-ts";
+import { context, Context, sid } from "@aphro/runtime-ts";
 import App from "./App.js";
 import TodoList from "./generated/TodoList.js";
-import TodoListMutations from "./generated/TodoListMutations.js";
 
 createResolver()
   .then((resolver) => {
@@ -32,13 +31,13 @@ async function bootstrap(ctx: Context): Promise<TodoList> {
     db.query(sql.__dangerous__rawValue(TodoTable)),
   ]);
 
-  const lists = await TodoList.queryAll(ctx).gen();
-  let list: TodoList;
-  let _;
-  if (lists.length === 0) {
-    [_, list] = TodoListMutations.create(ctx, {}).save();
-  } else {
-    list = lists[0];
+  let list = await TodoList.queryAll(ctx).genOnlyValue();
+  if (list == null) {
+    list = TodoList.create(ctx, {
+      id: sid("aaaa"),
+      filter: "all",
+      editing: null,
+    }).save().optimistic;
   }
 
   return list;
