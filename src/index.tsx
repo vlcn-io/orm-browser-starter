@@ -3,11 +3,11 @@ import { createRoot } from "react-dom/client";
 
 import { createResolver } from "@aphro/absurd-sql-connector";
 import { anonymous, sql } from "@aphro/runtime-ts";
-import TodoTable from "./generated/Todo.sqlite.sql";
-import TodoListTable from "./generated/TodoList.sqlite.sql";
+import TodoTable from "./domain/generated/Todo.sqlite.sql";
+import TodoListTable from "./domain/generated/TodoList.sqlite.sql";
 import { context, Context, sid } from "@aphro/runtime-ts";
 import App from "./App.js";
-import TodoList from "./generated/TodoList.js";
+import TodoList from "./domain/TodoList.js";
 
 createResolver()
   .then((resolver) => {

@@ -1,4 +1,4 @@
-// SIGNED-SOURCE: <cbe7d773dad7e69f94d065523333a47b>
+// SIGNED-SOURCE: <0eabda271f9dbed3f8c57965ce7c5a1c>
 /**
  * AUTO-GENERATED FILE
  * Do not modify. Update your schema and re-generate for changes.
@@ -7,18 +7,18 @@ import { Context } from "@aphro/runtime-ts";
 import { SID_of } from "@aphro/runtime-ts";
 import { NodeSpecWithCreate } from "@aphro/runtime-ts";
 import { default as TodoSpec } from "./TodoSpec.js";
-import TodoList from "./TodoList.js";
-import { Data } from "./TodoList.js";
+import TodoList from "../TodoList.js";
+import { Data } from "./TodoListBase.js";
 
-const spec: NodeSpecWithCreate<TodoList, Data> = {
+const TodoListSpec: NodeSpecWithCreate<TodoList, Data> = {
   type: "node",
   createFrom(ctx: Context, data: Data) {
-    const existing = ctx.cache.get(data["id"], TodoList.name);
+    const existing = ctx.cache.get(data["id"], "todomvc", "todolist");
     if (existing) {
       return existing;
     }
     const result = new TodoList(ctx, data);
-    ctx.cache.set(data["id"], result);
+    ctx.cache.set(data["id"], result, "todomvc", "todolist");
     return result;
   },
 
@@ -37,7 +37,7 @@ const spec: NodeSpecWithCreate<TodoList, Data> = {
       sourceField: "id",
       destField: "listId",
       get source() {
-        return spec;
+        return TodoListSpec;
       },
       get dest() {
         return TodoSpec;
@@ -46,4 +46,4 @@ const spec: NodeSpecWithCreate<TodoList, Data> = {
   },
 };
 
-export default spec;
+export default TodoListSpec;

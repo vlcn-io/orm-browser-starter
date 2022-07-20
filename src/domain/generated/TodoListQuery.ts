@@ -1,4 +1,4 @@
-// SIGNED-SOURCE: <e32753cd5f5e17d4d4248334614284fe>
+// SIGNED-SOURCE: <0e74641b468634b2682a34f1f129d462>
 /**
  * AUTO-GENERATED FILE
  * Do not modify. Update your schema and re-generate for changes.
@@ -16,19 +16,19 @@ import { ModelFieldGetter } from "@aphro/runtime-ts";
 import { Expression } from "@aphro/runtime-ts";
 import { EmptyQuery } from "@aphro/runtime-ts";
 import { SID_of } from "@aphro/runtime-ts";
-import TodoList from "./TodoList.js";
-import { Data } from "./TodoList.js";
-import { default as spec } from "./TodoListSpec.js";
-import Todo from "./Todo.js";
-import { default as TodoSpec } from "./TodoSpec.js";
+import TodoList from "../TodoList.js";
+import { Data } from "./TodoListBase.js";
+import TodoListSpec from "./TodoListSpec.js";
+import Todo from "../Todo.js";
+import TodoSpec from "./TodoSpec.js";
 import TodoQuery from "./TodoQuery.js";
 
 export default class TodoListQuery extends DerivedQuery<TodoList> {
   static create(ctx: Context) {
     return new TodoListQuery(
       ctx,
-      QueryFactory.createSourceQueryFor(ctx, spec),
-      modelLoad(ctx, spec.createFrom)
+      QueryFactory.createSourceQueryFor(ctx, TodoListSpec),
+      modelLoad(ctx, TodoListSpec.createFrom)
     );
   }
 
@@ -64,7 +64,11 @@ export default class TodoListQuery extends DerivedQuery<TodoList> {
   queryTodos(): TodoQuery {
     return new TodoQuery(
       this.ctx,
-      QueryFactory.createHopQueryFor(this.ctx, this, spec.outboundEdges.todos),
+      QueryFactory.createHopQueryFor(
+        this.ctx,
+        this,
+        TodoListSpec.outboundEdges.todos
+      ),
       modelLoad(this.ctx, TodoSpec.createFrom)
     );
   }

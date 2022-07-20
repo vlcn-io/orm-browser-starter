@@ -1,9 +1,9 @@
-import Todo from "./generated/Todo.js";
+import Todo from "./domain/Todo.js";
 import * as React from "react";
 import { useState, useCallback, memo } from "react";
 import { useBind, useQuery } from "@aphro/react";
 import { commit, P, UpdateType, sid } from "@aphro/runtime-ts";
-import TodoList, { Data } from "./generated/TodoList.js";
+import TodoList, { Data } from "./domain/TodoList.js";
 
 type Filter = Data["filter"];
 
@@ -198,11 +198,9 @@ export default function App({ list }: { list: TodoList }) {
   const completeTodos = useQuery(() =>
     list.queryTodos().whereCompleted(P.equals(true))
   ).data;
-  const allTodos = useQuery(
-    () => list.queryTodos(),
-    [],
-    UpdateType.CREATE_OR_DELETE
-  ).data;
+  const allTodos = useQuery(() => list.queryTodos(), [], {
+    on: UpdateType.CREATE_OR_DELETE,
+  }).data;
 
   const remaining = activeTodos.length;
   let todos =

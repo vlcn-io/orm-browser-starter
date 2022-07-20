@@ -1,4 +1,4 @@
-// SIGNED-SOURCE: <8314ddfebf23e8aaf9afc1d26bfecc5a>
+// SIGNED-SOURCE: <e1946be1e97275f114ae860025576688>
 /**
  * AUTO-GENERATED FILE
  * Do not modify. Update your schema and re-generate for changes.
@@ -6,18 +6,18 @@
 import { Context } from "@aphro/runtime-ts";
 import { SID_of } from "@aphro/runtime-ts";
 import { NodeSpecWithCreate } from "@aphro/runtime-ts";
-import Todo from "./Todo.js";
-import { Data } from "./Todo.js";
+import Todo from "../Todo.js";
+import { Data } from "./TodoBase.js";
 
-const spec: NodeSpecWithCreate<Todo, Data> = {
+const TodoSpec: NodeSpecWithCreate<Todo, Data> = {
   type: "node",
   createFrom(ctx: Context, data: Data) {
-    const existing = ctx.cache.get(data["id"], Todo.name);
+    const existing = ctx.cache.get(data["id"], "todomvc", "todo");
     if (existing) {
       return existing;
     }
     const result = new Todo(ctx, data);
-    ctx.cache.set(data["id"], result);
+    ctx.cache.set(data["id"], result, "todomvc", "todo");
     return result;
   },
 
@@ -33,4 +33,4 @@ const spec: NodeSpecWithCreate<Todo, Data> = {
   outboundEdges: {},
 };
 
-export default spec;
+export default TodoSpec;
