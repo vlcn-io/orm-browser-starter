@@ -17,7 +17,6 @@ createResolver()
   .catch((e) => console.error(e));
 
 async function setup(ctx: Context): Promise<TodoList> {
-  (window as any).ctx = ctx;
   await bootstrap.createAutomigrateIfExists(ctx.dbResolver, {
     sqlite: {
       test: {
