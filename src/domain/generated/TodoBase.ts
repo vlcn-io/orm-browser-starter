@@ -1,4 +1,4 @@
-// SIGNED-SOURCE: <6c76a5aa6d6b7ac71d6272a819f42070>
+// SIGNED-SOURCE: <3a402bc7e9db2d660215c8a2d137363e>
 /**
  * AUTO-GENERATED FILE
  * Do not modify. Update your schema and re-generate for changes.
@@ -9,7 +9,7 @@ import { P } from "@aphro/runtime-ts";
 import { UpdateMutationBuilder } from "@aphro/runtime-ts";
 import { CreateMutationBuilder } from "@aphro/runtime-ts";
 import { DeleteMutationBuilder } from "@aphro/runtime-ts";
-import { OptimisticPromise } from "@aphro/runtime-ts";
+import { modelGenMemo } from "@aphro/runtime-ts";
 import { Node } from "@aphro/runtime-ts";
 import { NodeSpecWithCreate } from "@aphro/runtime-ts";
 import { SID_of } from "@aphro/runtime-ts";
@@ -48,21 +48,19 @@ export default abstract class TodoBase extends Node<Data> {
     return TodoQuery.create(ctx);
   }
 
-  static async genx(ctx: Context, id: SID_of<Todo>): Promise<Todo> {
-    const existing = ctx.cache.get(id, "todomvc", "todo");
-    if (existing) {
-      return existing;
-    }
-    return await this.queryAll(ctx).whereId(P.equals(id)).genxOnlyValue();
-  }
+  static genx = modelGenMemo(
+    "todomvc",
+    "todo",
+    (ctx: Context, id: SID_of<Todo>): Promise<Todo> =>
+      this.queryAll(ctx).whereId(P.equals(id)).genxOnlyValue()
+  );
 
-  static async gen(ctx: Context, id: SID_of<Todo>): Promise<Todo | null> {
-    const existing = ctx.cache.get(id, "todomvc", "todo");
-    if (existing) {
-      return existing;
-    }
-    return await this.queryAll(ctx).whereId(P.equals(id)).genOnlyValue();
-  }
+  static gen = modelGenMemo(
+    "todomvc",
+    "todo",
+    (ctx: Context, id: SID_of<Todo>): Promise<Todo | null> =>
+      this.queryAll(ctx).whereId(P.equals(id)).genOnlyValue()
+  );
 
   update(data: Partial<Data>) {
     return new UpdateMutationBuilder(this.ctx, this.spec, this)

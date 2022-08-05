@@ -1,8 +1,14 @@
--- SIGNED-SOURCE: <aba395c4f02a46c588bb67fd28bd8949>
+-- SIGNED-SOURCE: <4b0110a97709c9e1b1f988b82c4d9be6>
 CREATE TABLE
-  IF NOT EXISTS "todolist" (
-    "id" bigint NOT NULL,
-    "filter" varchar(255) NOT NULL,
-    "editing" bigint,
-    primary key ("id")
+  "todolist" (
+    "id"
+    /* n=1 */
+,
+    "filter"
+    /* n=2 */
+,
+    "editing"
+    /* n=3 */
+,
+    PRIMARY KEY ("id")
   )

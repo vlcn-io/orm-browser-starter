@@ -1,9 +1,17 @@
--- SIGNED-SOURCE: <33f75376e9470c4f0610dc68e13cf74a>
+-- SIGNED-SOURCE: <fc4045cdbeac1e6805801bdf53d7974d>
 CREATE TABLE
-  IF NOT EXISTS "todo" (
-    "id" bigint NOT NULL,
-    "listId" bigint NOT NULL,
-    "text" text NOT NULL,
-    "completed" boolean NOT NULL,
-    primary key ("id")
+  "todo" (
+    "id"
+    /* n=1 */
+,
+    "listId"
+    /* n=2 */
+,
+    "text"
+    /* n=3 */
+,
+    "completed"
+    /* n=4 */
+,
+    PRIMARY KEY ("id")
   )
