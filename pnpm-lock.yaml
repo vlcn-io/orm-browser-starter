@@ -4,7 +4,7 @@ specifiers:
   '@aphro/absurd-sql-connector': ^0.2.1
   '@aphro/codegen-cli': ^0.3.2
   '@aphro/react': ^1.0.1
-  '@aphro/runtime-ts': ^0.3.1
+  '@aphro/runtime-ts': ^0.3.2
   '@types/react': ^18.0.14
   html-webpack-plugin: ^5.5.0
   raw-loader: ^4.0.2
@@ -19,8 +19,8 @@ specifiers:
 
 dependencies:
   '@aphro/absurd-sql-connector': 0.2.1
-  '@aphro/react': 1.0.1_6m7qhoaqqpxktwy5gtoxgzycf4
-  '@aphro/runtime-ts': 0.3.1
+  '@aphro/react': 1.0.1_3gwqx5m2mzvegbdqtntjie2hbu
+  '@aphro/runtime-ts': 0.3.2
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
 
@@ -167,8 +167,8 @@ packages:
       '@aphro/schema-api': 0.2.1
     dev: true
 
-  /@aphro/migration-runtime-ts/0.1.1:
-    resolution: {integrity: sha512-k9IvWMIYan6Xjrgtf1D9gGw08ffUIQdZRhWEyYeBAROyPTi7b0QhI4BGW3N9QBtHapkXbLPyvKgTAFcJOHuaQA==}
+  /@aphro/migration-runtime-ts/0.1.2:
+    resolution: {integrity: sha512-jyFS61B9FqQcS7cZ6+zLjXI9Ys7sOtDbwiFjceuzckGkIMEh9ZYNV6eNTBQYgprgaLBAjcmeuQr1knmmQtureA==}
     dependencies:
       '@aphro/context-runtime-ts': 0.3.1
       '@aphro/sql-ts': 0.2.1
@@ -208,8 +208,8 @@ packages:
       '@aphro/schema-api': 0.2.1
     dev: true
 
-  /@aphro/mutator-runtime-ts/0.3.1:
-    resolution: {integrity: sha512-xjBJQL/f/D9BZ9hwTj78hUr0ew9EkkCpI8RHpJFFwPUskhOF9VraA6d3RBpADkvd1CBOrBNUQ1tNovtAiot09A==}
+  /@aphro/mutator-runtime-ts/0.3.2:
+    resolution: {integrity: sha512-5uTlOB5IIfzF3u5ZF77cmQ/MxpI3q/PymF7xz/RDTrE4vkBTOiPFLFHxjD6SPT8y+0evXJ9XJkGx/vk5xBLc6Q==}
     dependencies:
       '@aphro/context-runtime-ts': 0.3.1
       '@aphro/model-runtime-ts': 0.2.1
@@ -217,6 +217,7 @@ packages:
       '@aphro/sql-ts': 0.2.1
       '@strut/sid': 0.1.2
       '@strut/utils': 0.1.1
+      nanoid: 4.0.0
     dev: false
 
   /@aphro/parse-ts/0.2.1:
@@ -238,25 +239,25 @@ packages:
       '@strut/utils': 0.1.1
     dev: false
 
-  /@aphro/react/1.0.1_6m7qhoaqqpxktwy5gtoxgzycf4:
+  /@aphro/react/1.0.1_3gwqx5m2mzvegbdqtntjie2hbu:
     resolution: {integrity: sha512-aU4tuNykMN1DinY/J+Yti8tlj1M+/ZjFk2jNW+DJxV/3RLl5P+wjhbwG4wMYcvadxDBetu02WDf0tBwqbGudpw==}
     peerDependencies:
       '@aphro/runtime-ts': ^0.3.1
       react: ^18.0.0
     dependencies:
-      '@aphro/runtime-ts': 0.3.1
+      '@aphro/runtime-ts': 0.3.2
       '@strut/counter': 0.0.11
       react: 18.2.0
     dev: false
 
-  /@aphro/runtime-ts/0.3.1:
-    resolution: {integrity: sha512-+tsiAw9E+DtBQBJD8RrNyCFBBEqIK13hb5X5r7j6uubQMTSpC5118FRWTLGfIuXMeuhYWQn9lFL1kafOlckMPQ==}
+  /@aphro/runtime-ts/0.3.2:
+    resolution: {integrity: sha512-YuAVDeubVrYZSJ4rdtDrlAdgNsjbYyxRQwj4+f0wHCq+v4ByBoQS6hO+U1gkXc+aMYIBfcpkyOMy4Ve7DkM8Hw==}
     dependencies:
       '@aphro/cache-runtime-ts': 0.2.1
       '@aphro/context-runtime-ts': 0.3.1
-      '@aphro/migration-runtime-ts': 0.1.1
+      '@aphro/migration-runtime-ts': 0.1.2
       '@aphro/model-runtime-ts': 0.2.1
-      '@aphro/mutator-runtime-ts': 0.3.1
+      '@aphro/mutator-runtime-ts': 0.3.2
       '@aphro/query-runtime-ts': 0.2.1
       '@aphro/sql-ts': 0.2.1
       '@strut/sid': 0.1.2
@@ -1932,6 +1933,12 @@ packages:
       dns-packet: 5.4.0
       thunky: 1.1.0
     dev: true
+
+  /nanoid/4.0.0:
+    resolution: {integrity: sha512-IgBP8piMxe/gf73RTQx7hmnhwz0aaEXYakvqZyE302IXW3HyVNhdNGC+O2MwMAVhLEnvXlvKtGbtJf6wvHihCg==}
+    engines: {node: ^14 || ^16 || >=18}
+    hasBin: true
+    dev: false
 
   /negotiator/0.6.3:
     resolution: {integrity: sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==}
