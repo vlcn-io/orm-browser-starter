@@ -11,7 +11,7 @@ import TodoList from "./domain/TodoList.js";
 
 createResolver()
   .then((resolver) => {
-    const ctx = context(anonymous(), resolver);
+    const ctx = context(anonymous(), resolver as any);
     start(ctx);
   })
   .catch((e) => console.error(e));
