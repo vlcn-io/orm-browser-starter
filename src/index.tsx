@@ -11,6 +11,7 @@ import TodoList from "./domain/TodoList.js";
 
 createResolver()
   .then((resolver) => {
+    // TODO: why did this type break?
     const ctx = context(anonymous(), resolver as any);
     start(ctx);
   })
@@ -41,6 +42,6 @@ async function setup(ctx: Context): Promise<TodoList> {
 async function start(ctx: Context) {
   const list = await setup(ctx);
 
-  const root = createRoot(document.getElementById("container"));
+  const root = createRoot(document.getElementById("container")!);
   root.render(<App list={list} />);
 }
