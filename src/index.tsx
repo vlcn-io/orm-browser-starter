@@ -12,7 +12,7 @@ import TodoList from "./domain/TodoList.js";
 createResolver()
   .then((resolver) => {
     // TODO: why did this type break?
-    const ctx = context(anonymous(), resolver as any);
+    const ctx = context(anonymous(), resolver);
     start(ctx);
   })
   .catch((e) => console.error(e));

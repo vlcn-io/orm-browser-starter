@@ -1,10 +1,10 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@aphro/absurd-sql-connector': ^0.2.1
-  '@aphro/codegen-cli': ^0.3.6
-  '@aphro/react': ^1.1.0
-  '@aphro/runtime-ts': ^0.3.5
+  '@aphro/absurd-sql-connector': ^0.3.0
+  '@aphro/codegen-cli': ^0.3.7
+  '@aphro/react': ^1.2.0
+  '@aphro/runtime-ts': ^0.3.6
   '@types/react': ^18.0.14
   '@types/react-dom': ^18.0.6
   html-webpack-plugin: ^5.5.0
@@ -19,15 +19,15 @@ specifiers:
   webpack-dev-server: ^4.9.2
 
 dependencies:
-  '@aphro/absurd-sql-connector': 0.2.1
-  '@aphro/react': 1.1.0_frekgmicunnr4ohyckgunwlxbq
-  '@aphro/runtime-ts': 0.3.5
+  '@aphro/absurd-sql-connector': 0.3.0
+  '@aphro/react': 1.2.0_chbzovek7zh7ysdhakhkmhmgz4
+  '@aphro/runtime-ts': 0.3.6
   '@types/react-dom': 18.0.6
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
 
 devDependencies:
-  '@aphro/codegen-cli': 0.3.6
+  '@aphro/codegen-cli': 0.3.7
   '@types/react': 18.0.14
   html-webpack-plugin: 5.5.0_webpack@5.73.0
   raw-loader: 4.0.2_webpack@5.73.0
@@ -40,13 +40,14 @@ devDependencies:
 
 packages:
 
-  /@aphro/absurd-sql-connector/0.2.1:
-    resolution: {integrity: sha512-m46DeHCOZeG+Z4d8hIAzXY3b2OxB8ONnF/cUaVoggAloV7pXbtL1vfWd1NnkFpJohwKO2PhWSD0iL/I/DRdhPw==}
+  /@aphro/absurd-sql-connector/0.3.0:
+    resolution: {integrity: sha512-C9IG1dikMdy/lxg9A2QcGxIfIE/O1kKdUEKNpsvrNkxpwcQEtWlv0B1zLi77/K2Dm2mSzUql7Ts4Z0jbmqNcsQ==}
     dependencies:
       '@aphro/absurd-sql': 0.0.53
-      '@aphro/context-runtime-ts': 0.3.1
-      '@aphro/sql-ts': 0.2.1
+      '@aphro/instrument': 0.0.4
+      '@aphro/runtime-ts': 0.3.6
       '@aphro/sql.js': 1.7.0
+      '@opentelemetry/api': 1.1.0
       '@strut/counter': 0.0.11
     dev: false
 
@@ -54,13 +55,6 @@ packages:
     resolution: {integrity: sha512-VK+ZY9TvamiUFRxPHjdMSDsHiMyObhdxVwdJD+oQxUPpJqu2zPFsacYOCKSnBoq8wzYudyB0GIE/KvOd6nYyqw==}
     dependencies:
       safari-14-idb-fix: 1.0.6
-    dev: false
-
-  /@aphro/cache-runtime-ts/0.2.1:
-    resolution: {integrity: sha512-68r2isDM9SjBUVKiDfb0WsOeDWwcOSvnTx5Fnp9brmxXyjDc86x4BqyOxRfyU3Du0N0gHWKJ376AqPO6FMWu3g==}
-    dependencies:
-      '@strut/sid': 0.1.2
-      '@strut/utils': 0.1.1
     dev: false
 
   /@aphro/cache-runtime-ts/0.2.4:
@@ -76,19 +70,19 @@ packages:
       '@aphro/schema-api': 0.2.4
     dev: true
 
-  /@aphro/codegen-cli/0.3.6:
-    resolution: {integrity: sha512-eUkZ2Z+19wXkQHvDCQiQ/tZV448dxUdxz/H71mmWCgN9SlgLQ3S+EunlSxC0ke9s4+nzZFss6t1CF9nsUk9qKQ==}
+  /@aphro/codegen-cli/0.3.7:
+    resolution: {integrity: sha512-NO1B3bYY7Ykm7dEywAhxeLprMzDrJtT0q00WoarD881/RGs1UoDEq867QIGFlFZqFPe6+rlJBkb/BVyJQ75gjw==}
     hasBin: true
     dependencies:
-      '@aphro/codegen': 0.2.5
+      '@aphro/codegen': 0.2.6
       '@aphro/codegen-api': 0.2.4
-      '@aphro/codegen-sql': 0.2.5
-      '@aphro/codegen-ts': 0.3.6
-      '@aphro/graphql-codegen': 0.2.6
-      '@aphro/graphql-grammar': 0.2.5
-      '@aphro/mutation-codegen': 0.3.6
-      '@aphro/mutation-grammar': 0.2.5
-      '@aphro/schema': 0.2.5
+      '@aphro/codegen-sql': 0.2.6
+      '@aphro/codegen-ts': 0.4.0
+      '@aphro/graphql-codegen': 0.2.7
+      '@aphro/graphql-grammar': 0.2.6
+      '@aphro/mutation-codegen': 0.4.0
+      '@aphro/mutation-grammar': 0.3.0
+      '@aphro/schema': 0.3.0
       '@aphro/schema-api': 0.2.4
       '@strut/counter': 0.0.11
       '@strut/utils': 0.1.1
@@ -99,12 +93,12 @@ packages:
       prettier: 2.7.1
     dev: true
 
-  /@aphro/codegen-sql/0.2.5:
-    resolution: {integrity: sha512-zGsccsyqGEE89TI+5prauDf7dY09fLSr9yob+1zenPHJAUD3p/bNz24XkRP/IYztLoCq48VMmXrFDBa4O/tSAg==}
+  /@aphro/codegen-sql/0.2.6:
+    resolution: {integrity: sha512-vRCCoUY+WResDNL0RmhVlH3Lg9caxWu43Zgw8BlNtIg7sLNAwWI4960ZXcwQGBKBighEm8fuUItgzIRcJbghVA==}
     dependencies:
-      '@aphro/codegen': 0.2.5
+      '@aphro/codegen': 0.2.6
       '@aphro/codegen-api': 0.2.4
-      '@aphro/schema': 0.2.5
+      '@aphro/schema': 0.3.0
       '@aphro/schema-api': 0.2.4
       '@aphro/sql-ts': 0.2.4
       '@strut/counter': 0.0.11
@@ -113,12 +107,12 @@ packages:
       sql-formatter: 6.1.1
     dev: true
 
-  /@aphro/codegen-ts/0.3.6:
-    resolution: {integrity: sha512-0VNau40mp/U2ZO8cKnXARFBlb5P5CYz6LWSDrz8HFMbJURyMi1tdUvSjja72UMxszS+ROu3iRwUlIXZ3peJw8w==}
+  /@aphro/codegen-ts/0.4.0:
+    resolution: {integrity: sha512-yLcNRAW5F+Kt4f4EounDqO6njxOzAUvBYNQ4H48mNxWEWkQEkyt5d3QDRrQk42Mkfq5+Me3d+D/tT08MGer9vg==}
     dependencies:
-      '@aphro/codegen': 0.2.5
+      '@aphro/codegen': 0.2.6
       '@aphro/codegen-api': 0.2.4
-      '@aphro/schema': 0.2.5
+      '@aphro/schema': 0.3.0
       '@aphro/schema-api': 0.2.4
       '@strut/counter': 0.0.11
       '@strut/utils': 0.1.1
@@ -126,28 +120,17 @@ packages:
       prettier: 2.7.1
     dev: true
 
-  /@aphro/codegen/0.2.5:
-    resolution: {integrity: sha512-MHjb8xIjTD0zx2ujAai4/wORaWrUUZisvo3z4TRF1+27AiiSL8fOk5Z6un44UESjlkhuA2nT8l9wStS0vMUviw==}
+  /@aphro/codegen/0.2.6:
+    resolution: {integrity: sha512-8ILzxxaceP6O/mEULd2msDTFQZWNAhgNKqdzySTMqJiyVxTqQRvHXUYqftLeiusVzbtLTI/851L6eMMCQZxpjw==}
     dependencies:
       '@aphro/codegen-api': 0.2.4
-      '@aphro/schema': 0.2.5
+      '@aphro/schema': 0.3.0
       '@aphro/schema-api': 0.2.4
       '@strut/counter': 0.0.11
       '@strut/sid': 0.1.2
       '@strut/utils': 0.1.1
       md5: 2.3.0
     dev: true
-
-  /@aphro/context-runtime-ts/0.3.1:
-    resolution: {integrity: sha512-OMxi5c7DnJsJQc3O8MJ2vZxy88sMocFnpu1usjG3xG7JX8wK9iSXjOieYeEiHYCmBxHWBuQ5b6CrqBXCmzVYxw==}
-    dependencies:
-      '@aphro/cache-runtime-ts': 0.2.1
-      '@aphro/schema-api': 0.2.1
-      '@aphro/sql-ts': 0.2.1
-      '@strut/events': 0.0.10
-      '@strut/sid': 0.1.2
-      '@strut/utils': 0.1.1
-    dev: false
 
   /@aphro/context-runtime-ts/0.3.4:
     resolution: {integrity: sha512-lTehZdwHBmRCTyc+VIn/yJm6kD8whB/2HBVBMn0onnVz9V6jQCedtocUlhHpzlDpZ5bpGQQVtJdzqjoaRZx2xA==}
@@ -167,23 +150,23 @@ packages:
       ohm-js: 16.3.4
     dev: true
 
-  /@aphro/graphql-codegen/0.2.6:
-    resolution: {integrity: sha512-mDTSN9cvJM3cnLVueBIcobSz0u3jh3/ycKrB3Fib1rQ8MUytIFVbz8L024SkXXsWVEptM6CMp0pFjmyxDhbdKg==}
+  /@aphro/graphql-codegen/0.2.7:
+    resolution: {integrity: sha512-+eRSeT4WqJ01URfsMvRUDhcwCnkBFkNWoChU5F/Bk1FRYg6iiyay8hgSZnPeU/fuaf8+oAhcYe3OOw50IEOCHg==}
     dependencies:
-      '@aphro/codegen': 0.2.5
+      '@aphro/codegen': 0.2.6
       '@aphro/codegen-api': 0.2.4
-      '@aphro/codegen-ts': 0.3.6
-      '@aphro/graphql-grammar': 0.2.5
-      '@aphro/schema': 0.2.5
+      '@aphro/codegen-ts': 0.4.0
+      '@aphro/graphql-grammar': 0.2.6
+      '@aphro/schema': 0.3.0
       '@aphro/schema-api': 0.2.4
       '@strut/utils': 0.1.1
     dev: true
 
-  /@aphro/graphql-grammar/0.2.5:
-    resolution: {integrity: sha512-tK5XQyMGNY0LZIw+WXAmaxQPnkdWXn6TAobjA2q1g+iAanOiMU9F9GFQ4Ip2ha+k/gG5eY6m2FxytD0ww/Qt3A==}
+  /@aphro/graphql-grammar/0.2.6:
+    resolution: {integrity: sha512-Dfaf/+xoPfs1/A64aiI60YRS2/GAIGCd9Bc1MRhOx6e3HtB9r0WW45vTtIoKxU33LhTYcn/QSP4TgQepurqvtg==}
     dependencies:
       '@aphro/grammar-extension-api': 0.2.4
-      '@aphro/schema': 0.2.5
+      '@aphro/schema': 0.3.0
       '@aphro/schema-api': 0.2.4
     dev: true
 
@@ -212,30 +195,30 @@ packages:
       '@strut/utils': 0.1.1
     dev: false
 
-  /@aphro/mutation-codegen/0.3.6:
-    resolution: {integrity: sha512-3TsDSMVijAAJHq/efizeOw7hTNJJx/lYx21Aa1VUb1qwShKyhV4+xVwqSehQdzfOf5NVTtPTSNC46apAh2ziuA==}
+  /@aphro/mutation-codegen/0.4.0:
+    resolution: {integrity: sha512-ldcY8pS+n6CI4CUQGoNAQ+Nncr6ytrQJteuh214VTcWByrfbPpMdc02XSqxKr9sMnsC2GRO3Q00ZeSuChi0a/w==}
     dependencies:
-      '@aphro/codegen': 0.2.5
+      '@aphro/codegen': 0.2.6
       '@aphro/codegen-api': 0.2.4
-      '@aphro/codegen-ts': 0.3.6
-      '@aphro/mutation-grammar': 0.2.5
+      '@aphro/codegen-ts': 0.4.0
+      '@aphro/mutation-grammar': 0.3.0
       '@aphro/parse-ts': 0.2.4
-      '@aphro/schema': 0.2.5
+      '@aphro/schema': 0.3.0
       '@aphro/schema-api': 0.2.4
       '@strut/utils': 0.1.1
       '@types/node': 17.0.45
     dev: true
 
-  /@aphro/mutation-grammar/0.2.5:
-    resolution: {integrity: sha512-khoe79ynNKvrnUZL7nmEFhGfJlVe0AuaB8QwOfWcinrhVxYvoh8MIY548lHZoRDtCmWzYRAblapUqBZSpFh6Aw==}
+  /@aphro/mutation-grammar/0.3.0:
+    resolution: {integrity: sha512-XKSB/cwZtHNFiDS0vC/CeVFMHRgS1Tg/J2aTlRn0s/7EE41HDNmneFoP+SVTS8GLkw16c7iHHSAtGJV09Thnig==}
     dependencies:
       '@aphro/grammar-extension-api': 0.2.4
-      '@aphro/schema': 0.2.5
+      '@aphro/schema': 0.3.0
       '@aphro/schema-api': 0.2.4
     dev: true
 
-  /@aphro/mutator-runtime-ts/0.3.5:
-    resolution: {integrity: sha512-gSuM3bDaeqtzrkG69khwI8vlJ8OMlaSFWmbVxvoh5rpRLch/KE3EI39XTvSM1RVzq4yZ1x+zev33AxgXdBeFSg==}
+  /@aphro/mutator-runtime-ts/0.4.0:
+    resolution: {integrity: sha512-sBM5h5X9bGkrF1CC+kk1CclNSrHS9OOSHtVK6t5Jlv9bUXZFLnQ/DLv0ZoOYo9fiBf2INhOdVe8IBZ4I4Ufn3A==}
     dependencies:
       '@aphro/context-runtime-ts': 0.3.4
       '@aphro/instrument': 0.0.4
@@ -253,8 +236,8 @@ packages:
       typescript: 4.7.4
     dev: true
 
-  /@aphro/query-runtime-ts/0.2.4:
-    resolution: {integrity: sha512-O7MDnICXtqxBJ0dS140ycgKWyEaII4EJ1SJldnV69/372rpxItnoJhWaTg7efGCjgHlNs2Z78hmSy+UQBgYIng==}
+  /@aphro/query-runtime-ts/0.3.0:
+    resolution: {integrity: sha512-uHozdp8F3A59Wza+6xSt6QvAwObsiq5l+9a3ITGS5sdmOl7j1bK+JBYf1f0goM7zGP4JXAVqIcJGy/h/2GiH1g==}
     dependencies:
       '@aphro/cache-runtime-ts': 0.2.4
       '@aphro/context-runtime-ts': 0.3.4
@@ -267,41 +250,37 @@ packages:
       '@strut/utils': 0.1.1
     dev: false
 
-  /@aphro/react/1.1.0_frekgmicunnr4ohyckgunwlxbq:
-    resolution: {integrity: sha512-g6phYORSp89aDOJ10Nr/xrFFTnJua8/PLt2ZQ3NbNPJBlfsZY8h4vlyRbzvaJ6wnToLPBNHmwHH7H0yTITxuZA==}
+  /@aphro/react/1.2.0_chbzovek7zh7ysdhakhkmhmgz4:
+    resolution: {integrity: sha512-pwiuNXS7NIyMyaP3bS2A++uD/mMlGgQRZuVjGT3JuVopiwgJ1FnW/YxiwL93/zPFteA4F4ZWMb6RMRKQjm2lmQ==}
     peerDependencies:
-      '@aphro/runtime-ts': ^0.3.5
+      '@aphro/runtime-ts': ^0.3.6
       react: ^18.0.0
     dependencies:
-      '@aphro/runtime-ts': 0.3.5
+      '@aphro/runtime-ts': 0.3.6
       '@strut/counter': 0.0.11
       react: 18.2.0
       suspend-react: 0.0.8_react@18.2.0
     dev: false
 
-  /@aphro/runtime-ts/0.3.5:
-    resolution: {integrity: sha512-v0YK4btBxY5axBupvZKKR/Jdr1wFVY+9tmo5phT/UhmVhBi68rSCuS8x8pXACENTur8FzyBX4Wwt9IE04zovYA==}
+  /@aphro/runtime-ts/0.3.6:
+    resolution: {integrity: sha512-S3JpCW/5JD+pvZPfb8S48U35lfa499PUTZHsRamFavRHnP9ftQYhYGNeyDd8LCmhnP6CnzaDmTPEY23TtIzlng==}
     dependencies:
       '@aphro/cache-runtime-ts': 0.2.4
       '@aphro/context-runtime-ts': 0.3.4
       '@aphro/migration-runtime-ts': 0.1.5
       '@aphro/model-runtime-ts': 0.2.4
-      '@aphro/mutator-runtime-ts': 0.3.5
-      '@aphro/query-runtime-ts': 0.2.4
+      '@aphro/mutator-runtime-ts': 0.4.0
+      '@aphro/query-runtime-ts': 0.3.0
       '@aphro/sql-ts': 0.2.4
       '@strut/sid': 0.1.2
       '@strut/utils': 0.1.1
     dev: false
 
-  /@aphro/schema-api/0.2.1:
-    resolution: {integrity: sha512-L2vAET1C+LrNEGH0JCN7tGpYidw/5aM6YaZU6QGIsT/Vk30ert23MnX7OK95icBiLBDh7BZW0E4NCrrN5uQ6Cg==}
-    dev: false
-
   /@aphro/schema-api/0.2.4:
     resolution: {integrity: sha512-nBHFOGuVacaZCFduGrPPjtu4sO9/fMmhfF/b0fDRXEtWOLOX1tI8y6vKdznvdExos8jZGk3YfTtOsIVNuZS6kA==}
 
-  /@aphro/schema/0.2.5:
-    resolution: {integrity: sha512-9u096U1ITxnSJPpkQOz+5lvH8E3nMLyqeXWU08tgB+fUs/d/iyA7eri0R+Eqlr3IqurB54K1X/u2byu3WB7Yfg==}
+  /@aphro/schema/0.3.0:
+    resolution: {integrity: sha512-H5QtGUX3sQco2xwYuhZQ5t5TAteJVIvxV/8n4RVlh+l9dLC2CQT89tFa8EvteBPqB91vRBvzFX+mTS5fZQXHPA==}
     dependencies:
       '@aphro/codegen-api': 0.2.4
       '@aphro/grammar-extension-api': 0.2.4
@@ -310,13 +289,6 @@ packages:
       '@strut/sid': 0.1.2
       '@strut/utils': 0.1.1
     dev: true
-
-  /@aphro/sql-ts/0.2.1:
-    resolution: {integrity: sha512-2bie+p00Bvf7oWBMcn4I6vdijnFVoIJ/XPHtZoimmHiWXceFosaw+SwdwMVq4+I71DTLxchCVePo/+TLY7Ay/g==}
-    dependencies:
-      '@databases/escape-identifier': 1.0.3
-      '@databases/sql': 3.2.0
-    dev: false
 
   /@aphro/sql-ts/0.2.4:
     resolution: {integrity: sha512-MSnQLM94Q/Zu4887RE2lFkmw5+XB9twKg4zHCMhtDxlhLxWlFT9nYUHIWUgTl2cz4Jfpuj9tpEJ5i1rZ/ovNHg==}
