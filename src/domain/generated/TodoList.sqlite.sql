@@ -1,4 +1,5 @@
--- SIGNED-SOURCE: <4b0110a97709c9e1b1f988b82c4d9be6>
+-- SIGNED-SOURCE: <7048e89aae20f31a325983182d690969>
+-- STATEMENT
 CREATE TABLE
   "todolist" (
     "id"
@@ -11,4 +12,4 @@ CREATE TABLE
     /* n=3 */
 ,
     PRIMARY KEY ("id")
-  )
+  );

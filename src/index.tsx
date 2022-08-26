@@ -9,7 +9,7 @@ import { context, Context, sid } from "@aphro/runtime-ts";
 import App from "./App.js";
 import TodoList from "./domain/TodoList.js";
 
-createResolver()
+createResolver("todomvc")
   .then((resolver) => {
     // TODO: why did this type break?
     const ctx = context(anonymous(), resolver);
@@ -20,7 +20,7 @@ createResolver()
 async function setup(ctx: Context): Promise<TodoList> {
   await bootstrap.createAutomigrateIfExists(ctx.dbResolver, {
     sqlite: {
-      test: {
+      todomvc: {
         TodoList: TodoListTable,
         Todo: TodoTable,
       },
