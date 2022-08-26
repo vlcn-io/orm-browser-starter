@@ -17,10 +17,6 @@ export default {
     },
     allowedHosts: "all",
     hot: true,
-    headers: {
-      "Cross-Origin-Opener-Policy": "same-origin",
-      "Cross-Origin-Embedder-Policy": "require-corp",
-    },
   },
   entry: "./src/index.tsx",
   mode: "development",

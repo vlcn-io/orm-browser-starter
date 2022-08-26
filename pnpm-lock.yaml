@@ -1,10 +1,10 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@aphro/absurd-sql-connector': ^0.3.1
   '@aphro/codegen-cli': ^0.3.9
   '@aphro/react': ^1.2.2
   '@aphro/runtime-ts': ^0.3.7
+  '@aphro/wa-sqlite-connector': ^0.3.2
   '@types/react': ^18.0.14
   '@types/react-dom': ^18.0.6
   html-webpack-plugin: ^5.5.0
@@ -19,10 +19,10 @@ specifiers:
   webpack-dev-server: ^4.9.2
 
 dependencies:
-  '@aphro/absurd-sql-connector': 0.3.1
   '@aphro/codegen-cli': 0.3.9
   '@aphro/react': 1.2.2_77ymstwv2rkw4lg7mkx6ldrnxa
   '@aphro/runtime-ts': 0.3.7
+  '@aphro/wa-sqlite-connector': 0.3.2
   '@types/react-dom': 18.0.6
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -39,25 +39,6 @@ devDependencies:
   webpack-dev-server: 4.9.2_77l47gmqkrqiei5z7sbwz5iaj4
 
 packages:
-
-  /@aphro/absurd-sql-connector/0.3.1:
-    resolution: {integrity: sha512-He/VMV8OqR6SEPLbym/7YU4oaMj5pIcTQKMIRIzfUSP1+GxReWyGqmisCW04QckPOxmX9x1WAsZXlp9WSpNnZg==}
-    dependencies:
-      '@aphro/absurd-sql': 0.0.53
-      '@aphro/instrument': 0.0.5
-      '@aphro/runtime-ts': 0.3.7
-      '@aphro/sql.js': 1.7.0
-      '@opentelemetry/api': 1.1.0
-      '@strut/counter': 0.0.11
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
-
-  /@aphro/absurd-sql/0.0.53:
-    resolution: {integrity: sha512-VK+ZY9TvamiUFRxPHjdMSDsHiMyObhdxVwdJD+oQxUPpJqu2zPFsacYOCKSnBoq8wzYudyB0GIE/KvOd6nYyqw==}
-    dependencies:
-      safari-14-idb-fix: 1.0.6
-    dev: false
 
   /@aphro/cache-runtime-ts/0.2.5:
     resolution: {integrity: sha512-B2d+/ipcaVbdfinTWLhyTIQPim7f69fUQ2paexUOodIJCFq2d44UNrtjJohv4WEb1hl0+Cc5ss5LM1tnNcC7WQ==}
@@ -305,8 +286,16 @@ packages:
       '@databases/sql': 3.2.0
     dev: false
 
-  /@aphro/sql.js/1.7.0:
-    resolution: {integrity: sha512-SDh63YPAKXKIXE1RW+YYvlQ13tHTc36QT3o17xxlAgvMN6KfQDmNCa/iSLt3XH9Rsa7JFRxSWRiKNXrI2uYOmw==}
+  /@aphro/wa-sqlite-connector/0.3.2:
+    resolution: {integrity: sha512-XR3/YT2OOyzENn+kxGd2ncj69eOmg01jm0QQ8vbDXpXPf80Yw5vfqENQLh1CqF4qfAf3NaPco4Lh2CVY6/XJNQ==}
+    dependencies:
+      '@aphro/instrument': 0.0.5
+      '@aphro/runtime-ts': 0.3.7
+      '@opentelemetry/api': 1.1.0
+      '@strut/counter': 0.0.11
+      wa-sqlite: github.com/rhashimoto/wa-sqlite/5fdc80ff1c153aeb0dab65a5e23ca22938c827a3
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /@databases/escape-identifier/1.0.3:
@@ -2587,10 +2576,6 @@ packages:
       glob: 7.2.3
     dev: true
 
-  /safari-14-idb-fix/1.0.6:
-    resolution: {integrity: sha512-oTEQOdMwRX+uCtWCKT1nx2gAeSdpr8elg/2gcaKUH00SJU2xWESfkx11nmXwTRHy7xfQoj1o4TTQvdmuBosTnA==}
-    dev: false
-
   /safe-buffer/5.1.2:
     resolution: {integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==}
 
@@ -3293,3 +3278,9 @@ packages:
   /yallist/4.0.0:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
     dev: true
+
+  github.com/rhashimoto/wa-sqlite/5fdc80ff1c153aeb0dab65a5e23ca22938c827a3:
+    resolution: {tarball: https://codeload.github.com/rhashimoto/wa-sqlite/tar.gz/5fdc80ff1c153aeb0dab65a5e23ca22938c827a3}
+    name: wa-sqlite
+    version: 0.8.2
+    dev: false

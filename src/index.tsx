@@ -1,7 +1,7 @@
 import * as React from "react";
 import { createRoot } from "react-dom/client";
 
-import { createResolver } from "@aphro/absurd-sql-connector";
+import { openDbAndCreateResolver } from "@aphro/wa-sqlite-connector";
 import { anonymous, bootstrap, sql } from "@aphro/runtime-ts";
 import TodoTable from "./domain/generated/Todo.sqlite.sql";
 import TodoListTable from "./domain/generated/TodoList.sqlite.sql";
@@ -9,9 +9,8 @@ import { context, Context, sid } from "@aphro/runtime-ts";
 import App from "./App.js";
 import TodoList from "./domain/TodoList.js";
 
-createResolver("todomvc")
+openDbAndCreateResolver("todomvc")
   .then((resolver) => {
-    // TODO: why did this type break?
     const ctx = context(anonymous(), resolver);
     start(ctx);
   })
