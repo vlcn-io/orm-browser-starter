@@ -41,14 +41,14 @@ Live queries are [here](https://github.com/aphrodite-sh/aphrodite-browser-starte
 
 ```typescript
 const activeTodos = useQuery(() =>
-    list.queryTodos().whereCompleted(P.equals(false))
-  ).data;
-  const completeTodos = useQuery(() =>
-    list.queryTodos().whereCompleted(P.equals(true))
-  ).data;
-  const allTodos = useQuery(() => list.queryTodos(), [], {
-    on: UpdateType.CREATE_OR_DELETE,
-  }).data;
+  list.queryTodos().whereCompleted(P.equals(false))
+).data;
+const completeTodos = useQuery(() =>
+  list.queryTodos().whereCompleted(P.equals(true))
+).data;
+const allTodos = useQuery(() => list.queryTodos(), [], {
+  on: UpdateType.CREATE_OR_DELETE,
+}).data;
 ```
 
 
